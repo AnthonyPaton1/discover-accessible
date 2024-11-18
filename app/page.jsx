@@ -2,13 +2,14 @@ import React from "react";
 import Hero from "@/components/Hero";
 import InfoBoxes from "@/components/InfoBoxes";
 import HomeProperties from "@/components/HomeProperties";
-import connectDb from "@/config/database";
+import FeaturedProperties from "@/components/FeaturedProperties";
 
 const HomePage = () => {
   return (
     <>
       <Hero />
       <InfoBoxes />
+      <FeaturedProperties />
       <HomeProperties />
     </>
   );

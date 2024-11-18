@@ -58,16 +58,23 @@ const PropertySchema = new Schema(
         required: true,
       },
     ],
+    price: Number,
     is_featured: {
       type: Boolean,
       default: false,
     },
+    subscription_paid: { type: Boolean, default: false },
   },
+
   {
     timestamps: true,
   }
 );
+// if (!models.Property) {
+//   console.log("Defining Property model...");
+//   models.Property = model("Property", PropertySchema);
+// }
 
-const Property = models.Property || model("Property", PropertySchema);
+const Property = models.Property;
 
 export default Property;

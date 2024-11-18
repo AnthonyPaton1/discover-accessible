@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/images/icon.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,16 +14,19 @@ const Footer = () => {
         <div className="flex flex-wrap justify-center md:justify-start mb-4 md:mb-0">
           <ul className="flex space-x-4">
             <li>
-              <Link href="/properties">Properties</Link>
+              <Link href="/properties">Venues</Link>
             </li>
             <li>
               <Link href="/terms">Terms of Service</Link>
+            </li>
+            <li>
+              <Link href="/careers">Careers</Link>
             </li>
           </ul>
         </div>
         <div>
           <p className="text-sm text-gray-500 mt-2 md:mt-0">
-            &copy; {currentYear} Discover Accesible Venues. All rights reserved.
+            &copy; {currentYear} D.A.V. All rights reserved.
           </p>
         </div>
       </div>

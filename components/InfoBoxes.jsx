@@ -14,7 +14,9 @@ const InfoBoxes = () => {
               backgroundColor: "bg-black",
             }}
           >
-            Locate new and exciting Venues near and afar to suit your needs
+            Locate new and exciting Venues near and afar to suit your
+            requirements. Bookmark venues and contact the team to arrange a
+            visit
           </InfoBox>
           <InfoBox
             heading="Venue Managers"
@@ -25,7 +27,8 @@ const InfoBoxes = () => {
               backgroundColor: "bg-blue-500",
             }}
           >
-            Advertise your Venue by showcasing whats on offer
+            List your Business to attract new and existing customers. Advertise
+            your Venue by showcasing whats on offer.
           </InfoBox>
         </div>
       </div>
