@@ -34,12 +34,12 @@ async function updateProperty(propertyId, formData) {
     location: {
       street: formData.get("location.street"),
       city: formData.get("location.city"),
-      state: formData.get("location.state"),
-      zipcode: formData.get("location.zipcode"),
+      county: formData.get("location.county"),
+      postcode: formData.get("location.postcode"),
     },
-    beds: formData.get("beds"),
-    baths: formData.get("baths"),
-    square_feet: formData.get("square_feet"),
+    // beds: formData.get("beds"),
+    // baths: formData.get("baths"),
+    // square_feet: formData.get("square_feet"),
     amenities,
     rates: {
       weekly: formData.get("rates.weekly"),

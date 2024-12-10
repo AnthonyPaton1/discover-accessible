@@ -16,7 +16,7 @@ const PropertyCard = ({ property }) => {
     } else if (rates.weekly) {
       return `$${rates.weekly.toLocaleString()}/wk`;
     } else if (rates.nightly) {
-      return `$${rates.nightly.toLocaleString()}/night`;
+      return `$${rates.daily.toLocaleString()}/day`;
     }
   };
 
@@ -40,7 +40,7 @@ const PropertyCard = ({ property }) => {
           {getRateDisplay()}
         </h3>
 
-        <div className="flex justify-center gap-4 text-gray-500 mb-4">
+        {/* <div className="flex justify-center gap-4 text-gray-500 mb-4">
           <p>
             <FaBed className="md:hidden lg:inline mr-2" /> {property.beds}
             <span className="md:hidden lg:inline"> Beds</span>
@@ -54,7 +54,7 @@ const PropertyCard = ({ property }) => {
             {property.square_feet}
             <span className="md:hidden lg:inline"> sqft</span>
           </p>
-        </div>
+        </div> */}
 
         <div className="flex justify-center gap-4 text-green-900 text-sm mb-4">
           <p>
@@ -72,7 +72,7 @@ const PropertyCard = ({ property }) => {
             <FaMapMarker className="text-orange-700 mt-1" />
             <span className="text-orange-700">
               {" "}
-              {property.location.city}, {property.location.state}
+              {property.location.city}, {property.location.county}
             </span>
           </div>
           <Link

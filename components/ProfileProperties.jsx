@@ -72,7 +72,7 @@ const ProfileProperties = ({ properties: initialProperties }) => {
         <p className="text-lg font-semibold">{property.name}</p>
         <p className="text-gray-600">
           Address: {property.location.street} {property.location.city}{" "}
-          {property.location.state}
+          {property.location.county}
         </p>
       </div>
       <div className="mt-2">

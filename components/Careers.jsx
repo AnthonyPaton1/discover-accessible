@@ -8,7 +8,8 @@ const Careers = () => {
         <span className="font-bold">Vacancy:</span> Software Developer
       </h2>
       <p className="text-grey-700">
-        We are looking for a skilled software developer to join our team.
+        We are looking for a skilled software developer to join our team, with
+        Next.js knowledge minimum 3 years experience
       </p>
       <ul className="mt-4">
         <li>

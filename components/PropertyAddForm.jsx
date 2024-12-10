@@ -19,12 +19,15 @@ const PropertyAddForm = () => {
           className="border rounded w-full py-2 px-3"
           required
         >
-          <option value="Apartment">Apartment</option>
-          <option value="Condo">Condo</option>
-          <option value="House">House</option>
-          <option value="CabinOrCottage">Cabin or Cottage</option>
-          <option value="Room">Room</option>
-          <option value="Studio">Studio</option>
+          <option value="Eateries">Eateries</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Events">Events</option>
+          <option value="Hobbies and Acivities">Hobbies or Activities</option>
+          <option value="Crafts and Arts">Crafts and Arts</option>
+          <option value="Hotel">Hotel/Guest-house</option>
+          <option value="Indoor Activity">Indoor Activities</option>
+          <option value="Outdoor Activity">Outdoor Activities</option>
+          <option value="Outreach">Outreach</option>
           <option value="Other">Other</option>
         </select>
       </div>
@@ -37,7 +40,7 @@ const PropertyAddForm = () => {
           id="name"
           name="name"
           className="border rounded w-full py-2 px-3 mb-2"
-          placeholder="eg. Beautiful Apartment In Miami"
+          placeholder="eg. Local weekly disco"
           required
         />
       </div>
@@ -53,7 +56,7 @@ const PropertyAddForm = () => {
           name="description"
           className="border rounded w-full py-2 px-3"
           rows="4"
-          placeholder="Add an optional description of your property"
+          placeholder="Add an optional description of your venue"
         ></textarea>
       </div>
 
@@ -76,22 +79,22 @@ const PropertyAddForm = () => {
         />
         <input
           type="text"
-          id="state"
-          name="location.state"
+          id="County"
+          name="location.county"
           className="border rounded w-full py-2 px-3 mb-2"
-          placeholder="State"
+          placeholder="County"
           required
         />
         <input
           type="text"
-          id="zipcode"
-          name="location.zipcode"
+          id="postcode"
+          name="location.postcode"
           className="border rounded w-full py-2 px-3 mb-2"
-          placeholder="Zipcode"
+          placeholder="Postcode"
         />
       </div>
 
-      <div className="mb-4 flex flex-wrap">
+      {/* <div className="mb-4 flex flex-wrap">
         <div className="w-full sm:w-1/3 pr-2">
           <label htmlFor="beds" className="block text-gray-700 font-bold mb-2">
             Beds
@@ -101,7 +104,6 @@ const PropertyAddForm = () => {
             id="beds"
             name="beds"
             className="border rounded w-full py-2 px-3"
-            required
           />
         </div>
         <div className="w-full sm:w-1/3 px-2">
@@ -113,7 +115,6 @@ const PropertyAddForm = () => {
             id="baths"
             name="baths"
             className="border rounded w-full py-2 px-3"
-            required
           />
         </div>
         <div className="w-full sm:w-1/3 pl-2">
@@ -128,10 +129,9 @@ const PropertyAddForm = () => {
             id="square_feet"
             name="square_feet"
             className="border rounded w-full py-2 px-3"
-            required
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="mb-4">
         <label className="block text-gray-700 font-bold mb-2">Amenities</label>
@@ -164,27 +164,27 @@ const PropertyAddForm = () => {
               value="Full kitchen"
               className="mr-2"
             />
-            <label htmlFor="amenity_kitchen">Full kitchen</label>
+            <label htmlFor="amenity_kitchen">Kitchen Facilities</label>
           </div>
           <div>
             <input
               type="checkbox"
-              id="amenity_washer_dryer"
+              id="amenity_elevator_access"
               name="amenities"
-              value="Washer & Dryer"
+              value="Elevator Access"
               className="mr-2"
             />
-            <label htmlFor="amenity_washer_dryer">Washer & Dryer</label>
+            <label htmlFor="amenity_elevator_access">Elevator Access</label>
           </div>
           <div>
             <input
               type="checkbox"
-              id="amenity_free_parking"
+              id="amenity_transport_links"
               name="amenities"
-              value="Free Parking"
+              value="Transport Links"
               className="mr-2"
             />
-            <label htmlFor="amenity_free_parking">Free Parking</label>
+            <label htmlFor="amenity_transport_links">Transport Links</label>
           </div>
           <div>
             <input
@@ -194,7 +194,7 @@ const PropertyAddForm = () => {
               value="Swimming Pool"
               className="mr-2"
             />
-            <label htmlFor="amenity_pool">Swimming Pool</label>
+            <label htmlFor="amenity_pool"> Heated Swimming Pool</label>
           </div>
           <div>
             <input
@@ -209,12 +209,24 @@ const PropertyAddForm = () => {
           <div>
             <input
               type="checkbox"
-              id="amenity_24_7_security"
+              id="amenity_wider_door_frames"
               name="amenities"
-              value="24/7 Security"
+              value="Wider Doorframes"
               className="mr-2"
             />
-            <label htmlFor="amenity_24_7_security">24/7 Security</label>
+            <label htmlFor="amenity_wider_door_frames">Wider Door Frames</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_coloured_door_frames"
+              name="amenities"
+              value="Wider Doorframes"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_coloured_door_frames">
+              Coloured Door Frames
+            </label>
           </div>
           <div>
             <input
@@ -231,12 +243,12 @@ const PropertyAddForm = () => {
           <div>
             <input
               type="checkbox"
-              id="amenity_elevator_access"
+              id="amenity_even_floors"
               name="amenities"
               value="Elevator Access"
               className="mr-2"
             />
-            <label htmlFor="amenity_elevator_access">Elevator Access</label>
+            <label htmlFor="amenity_even_floors">Even Floors</label>
           </div>
           <div>
             <input
@@ -248,37 +260,38 @@ const PropertyAddForm = () => {
             />
             <label htmlFor="amenity_dishwasher">Dishwasher</label>
           </div>
+
           <div>
             <input
               type="checkbox"
-              id="amenity_gym_fitness_center"
+              id="amenity_hoist_facilities"
               name="amenities"
-              value="Gym/Fitness Center"
+              value="Hoist Facilities"
               className="mr-2"
             />
-            <label htmlFor="amenity_gym_fitness_center">
-              Gym/Fitness Center
+            <label htmlFor="amenity_hoist_facilities">Hoist Facilities</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="free_carers"
+              name="amenities"
+              value="Free carers"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_free_carers">Carers go free</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_changing_facilities"
+              name="amenities"
+              value="Changing facilities"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_changing_facilities">
+              Changing facilities
             </label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="amenity_air_conditioning"
-              name="amenities"
-              value="Air Conditioning"
-              className="mr-2"
-            />
-            <label htmlFor="amenity_air_conditioning">Air Conditioning</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="amenity_balcony_patio"
-              name="amenities"
-              value="Balcony/Patio"
-              className="mr-2"
-            />
-            <label htmlFor="amenity_balcony_patio">Balcony/Patio</label>
           </div>
           <div>
             <input
@@ -288,17 +301,21 @@ const PropertyAddForm = () => {
               value="Smart TV"
               className="mr-2"
             />
-            <label htmlFor="amenity_smart_tv">Smart TV</label>
+            <label htmlFor="amenity_smart_tv">
+              No Over-stimulating screens
+            </label>
           </div>
           <div>
             <input
               type="checkbox"
-              id="amenity_coffee_maker"
+              id="amenity_autism_friendly_times"
               name="amenities"
-              value="Coffee Maker"
+              value="Autism friendly times"
               className="mr-2"
             />
-            <label htmlFor="amenity_coffee_maker">Coffee Maker</label>
+            <label htmlFor="amenity_autism_friendly_times">
+              Autism friendly times/SEN times
+            </label>
           </div>
         </div>
       </div>
@@ -308,6 +325,17 @@ const PropertyAddForm = () => {
           Rates (Leave blank if not applicable)
         </label>
         <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+          <div className="flex items-center">
+            <label htmlFor="day_rate" className="mr-2">
+              Daily
+            </label>
+            <input
+              type="number"
+              id="day_rate"
+              name="rates.day"
+              className="border rounded w-full py-2 px-3"
+            />
+          </div>
           <div className="flex items-center">
             <label htmlFor="weekly_rate" className="mr-2">
               Weekly
@@ -327,17 +355,6 @@ const PropertyAddForm = () => {
               type="number"
               id="monthly_rate"
               name="rates.monthly"
-              className="border rounded w-full py-2 px-3"
-            />
-          </div>
-          <div className="flex items-center">
-            <label htmlFor="nightly_rate" className="mr-2">
-              Nightly
-            </label>
-            <input
-              type="number"
-              id="nightly_rate"
-              name="rates.nightly"
               className="border rounded w-full py-2 px-3"
             />
           </div>
@@ -390,6 +407,21 @@ const PropertyAddForm = () => {
           placeholder="Phone"
         />
       </div>
+      <div className="mb-4">
+        <label
+          htmlFor="seller_website"
+          className="block text-gray-700 font-bold mb-2"
+        >
+          Website
+        </label>
+        <input
+          type="tel"
+          id="seller_website"
+          name="seller_info.website"
+          className="border rounded w-full py-2 px-3"
+          placeholder="Website"
+        />
+      </div>
 
       <div className="mb-4">
         <label htmlFor="images" className="block text-gray-700 font-bold mb-2">
@@ -407,7 +439,7 @@ const PropertyAddForm = () => {
       </div>
 
       <div>
-        <Link href="/payment">
+        <Link href="/payments">
           <button
             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
             type="button"

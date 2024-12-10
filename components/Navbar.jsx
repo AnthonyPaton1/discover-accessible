@@ -103,6 +103,16 @@ const Navbar = () => {
                     Add Venue
                   </Link>
                 )}
+                <Link
+                  href="/admin"
+                  className={`${
+                    pathname === "/admin" ? "bg-black" : ""
+                  } text-white  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 ${
+                    session ? "" : "hidden"
+                  }`}
+                >
+                  Admin
+                </Link>
               </div>
             </div>
           </div>
@@ -245,6 +255,14 @@ const Navbar = () => {
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
             >
               Venues
+            </Link>
+            <Link
+              href="/admin"
+              className={`${
+                pathname === "/admin" ? "bg-black" : ""
+              } text-white block rounded-md px-3 py-2 text-base font-medium`}
+            >
+              Admin
             </Link>
             {session && (
               <Link

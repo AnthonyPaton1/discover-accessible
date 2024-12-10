@@ -16,8 +16,8 @@ const FeaturedPropertyCard = ({ property }) => {
       return `£${rates.monthly.toLocaleString()}/mo`;
     } else if (rates.weekly) {
       return `£${rates.weekly.toLocaleString()}/wk`;
-    } else if (rates.nightly) {
-      return `£${rates.nightly.toLocaleString()}/night`;
+    } else if (rates.daily) {
+      return `£${rates.daily.toLocaleString()}/day`;
     }
   };
 
@@ -38,7 +38,7 @@ const FeaturedPropertyCard = ({ property }) => {
           <h3 className="absolute top-[10px] left-[10px] bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right">
             {getRateDisplay()}
           </h3>
-          <div className="flex justify-center gap-4 text-gray-500 mb-4">
+          {/* <div className="flex justify-center gap-4 text-gray-500 mb-4">
             <p>
               <FaBed className="inline-block mr-2" /> {property.beds}{" "}
               <span className="md:hidden lg:inline">Beds</span>
@@ -52,12 +52,12 @@ const FeaturedPropertyCard = ({ property }) => {
               {property.square_feet}{" "}
               <span className="md:hidden lg:inline">sqft</span>
             </p>
-          </div>
+          </div> */}
 
           <div className="flex justify-center gap-4 text-green-900 text-sm mb-4">
-            {property.rates.nightly && (
+            {property.rates.daily && (
               <p>
-                <FaMoneyBill className="inline mr-2" /> Nightly
+                <FaMoneyBill className="inline mr-2" /> Daily
               </p>
             )}
             {property.rates.weekly && (
@@ -78,7 +78,7 @@ const FeaturedPropertyCard = ({ property }) => {
             <div className="flex align-middle gap-2 mb-4 lg:mb-0">
               <FaMapMarker className="text-orange-700" />
               <span className="text-orange-700">
-                {property.location.city}, {property.location.state}
+                {property.location.city}, {property.location.county}
               </span>
             </div>
             <Link

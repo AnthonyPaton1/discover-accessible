@@ -17,25 +17,36 @@ const PropertySchema = new Schema(
     },
     description: {
       type: String,
-      required: true,
     },
     location: {
-      street: String,
-      city: String,
-      state: String,
-      zipcode: String,
+      street: {
+        type: String,
+        required: true,
+      },
+      city: {
+        type: String,
+        required: true,
+      },
+      county: {
+        type: String,
+        required: true,
+      },
+      postcode: {
+        type: String,
+        required: true,
+      },
     },
     beds: {
       type: Number,
-      required: true,
+      required: false,
     },
     baths: {
       type: Number,
-      required: true,
+      required: false,
     },
     square_feet: {
       type: Number,
-      required: true,
+      required: false,
     },
     amenities: [
       {
@@ -43,38 +54,46 @@ const PropertySchema = new Schema(
       },
     ],
     rates: {
-      nightly: Number,
-      weekly: Number,
-      monthly: Number,
+      daily: {
+        type: Number,
+        default: 0,
+      },
+      weekly: {
+        type: Number,
+        default: 0,
+      },
+      monthly: {
+        type: Number,
+        default: 0,
+      },
     },
     seller_info: {
-      name: String,
-      email: String,
-      phone: String,
+      name: {
+        type: String,
+      },
+      email: { type: String, match: /.+\@.+\..+/ },
+      phone: { type: String, match: /^[0-9]{10,15}$/ },
+      website: {
+        type: String,
+        required: false,
+        match: /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})(\/[\w .-]*)*\/?$/,
+      },
     },
     images: [
       {
         type: String,
-        required: true,
       },
     ],
-    price: Number,
     is_featured: {
       type: Boolean,
       default: false,
     },
-    subscription_paid: { type: Boolean, default: false },
   },
-
   {
     timestamps: true,
   }
 );
-// if (!models.Property) {
-//   console.log("Defining Property model...");
-//   models.Property = model("Property", PropertySchema);
-// }
 
-const Property = models.Property;
+const Property = models.Property || model("Property", PropertySchema);
 
 export default Property;

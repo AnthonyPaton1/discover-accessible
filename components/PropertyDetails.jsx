@@ -19,7 +19,7 @@ const PropertyDetails = ({ property }) => {
           <FaMapMarker className="text-orange-700 mt-1 mr-1" />
           <p className="text-orange-700">
             {property.location.street}, {property.location.city}{" "}
-            {property.location.zipcode}{" "}
+            {property.location.postcode}{" "}
           </p>
         </div>
 
@@ -28,10 +28,10 @@ const PropertyDetails = ({ property }) => {
         </h3>
         <div className="flex flex-col md:flex-row justify-around">
           <div className="flex items-center justify-center mb-4 border-b border-gray-200 md:border-b-0 pb-4 md:pb-0">
-            <div className="text-gray-500 mr-2 font-bold">Nightly</div>
+            <div className="text-gray-500 mr-2 font-bold">Daily</div>
             <div className="text-2xl font-bold text-blue-500">
-              {property.rates.nightly ? (
-                `£${property.rates.nightly.toLocaleString()}`
+              {property.rates.daily ? (
+                `£${property.rates.daily.toLocaleString()}`
               ) : (
                 <FaTimes className="text-red-700" />
               )}

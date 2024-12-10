@@ -27,7 +27,7 @@ const InfoBoxes = () => {
               backgroundColor: "bg-blue-500",
             }}
           >
-            List your Business to attract new and existing customers. Advertise
+            List your venue to attract new and existing customers. Advertise
             your Venue by showcasing whats on offer.
           </InfoBox>
         </div>

@@ -21,12 +21,15 @@ const PropertyEditForm = ({ property }) => {
           defaultValue={property.type}
           required
         >
-          <option value="Apartment">Apartment</option>
-          <option value="Condo">Condo</option>
-          <option value="House">House</option>
-          <option value="CabinOrCottage">Cabin or Cottage</option>
-          <option value="Room">Room</option>
-          <option value="Studio">Studio</option>
+          <option value="Eateries">Eateries</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Events">Events</option>
+          <option value="Hobbies and Acivities">Hobbies or Activities</option>
+          <option value="Crafts and Arts">Crafts and Arts</option>
+          <option value="Hotel">Hotel/Guest-house</option>
+          <option value="Indoor Activity">Indoor Activities</option>
+          <option value="Outdoor Activity">Outdoor Activities</option>
+          <option value="Outreach">Outreach</option>
           <option value="Other">Other</option>
         </select>
       </div>
@@ -39,7 +42,7 @@ const PropertyEditForm = ({ property }) => {
           id="name"
           name="name"
           className="border rounded w-full py-2 px-3 mb-2"
-          placeholder="eg. Beautiful Apartment In Miami"
+          placeholder="eg. Local weekly disco"
           defaultValue={property.name}
           required
         />
@@ -86,7 +89,7 @@ const PropertyEditForm = ({ property }) => {
           name="location.state"
           className="border rounded w-full py-2 px-3 mb-2"
           placeholder="State"
-          defaultValue={property.location.state}
+          defaultValue={property.location.county}
           required
         />
         <input
@@ -94,12 +97,12 @@ const PropertyEditForm = ({ property }) => {
           id="zipcode"
           name="location.zipcode"
           className="border rounded w-full py-2 px-3 mb-2"
-          defaultValue={property.location.zipcode}
+          defaultValue={property.location.postcode}
           placeholder="Zipcode"
         />
       </div>
 
-      <div className="mb-4 flex flex-wrap">
+      {/* <div className="mb-4 flex flex-wrap">
         <div className="w-full sm:w-1/3 pr-2">
           <label htmlFor="beds" className="block text-gray-700 font-bold mb-2">
             Beds
@@ -142,7 +145,7 @@ const PropertyEditForm = ({ property }) => {
             required
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="mb-4">
         <label className="block text-gray-700 font-bold mb-2">Amenities</label>
@@ -154,9 +157,18 @@ const PropertyEditForm = ({ property }) => {
               name="amenities"
               value="Wifi"
               className="mr-2"
-              defaultChecked={property.amenities.includes("Wifi")}
             />
             <label htmlFor="amenity_wifi">Wifi</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_guidedogs"
+              name="amenities"
+              value="Guide dogs"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_guidedogs">Guide Dogs</label>
           </div>
           <div>
             <input
@@ -165,79 +177,8 @@ const PropertyEditForm = ({ property }) => {
               name="amenities"
               value="Full kitchen"
               className="mr-2"
-              defaultChecked={property.amenities.includes("Full kitchen")}
             />
-            <label htmlFor="amenity_kitchen">Full kitchen</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="amenity_washer_dryer"
-              name="amenities"
-              value="Washer & Dryer"
-              className="mr-2"
-              defaultChecked={property.amenities.includes("Washer & Dryer")}
-            />
-            <label htmlFor="amenity_washer_dryer">Washer & Dryer</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="amenity_free_parking"
-              name="amenities"
-              value="Free Parking"
-              className="mr-2"
-              defaultChecked={property.amenities.includes("Free Parking")}
-            />
-            <label htmlFor="amenity_free_parking">Free Parking</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="amenity_pool"
-              name="amenities"
-              value="Swimming Pool"
-              className="mr-2"
-              defaultChecked={property.amenities.includes("Swimming Pool")}
-            />
-            <label htmlFor="amenity_pool">Swimming Pool</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="amenity_hot_tub"
-              name="amenities"
-              value="Hot Tub"
-              className="mr-2"
-              defaultChecked={property.amenities.includes("Hot Tub")}
-            />
-            <label htmlFor="amenity_hot_tub">Hot Tub</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="amenity_24_7_security"
-              name="amenities"
-              value="24/7 Security"
-              className="mr-2"
-              defaultChecked={property.amenities.includes("24/7 Security")}
-            />
-            <label htmlFor="amenity_24_7_security">24/7 Security</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="amenity_wheelchair_accessible"
-              name="amenities"
-              value="Wheelchair Accessible"
-              className="mr-2"
-              defaultChecked={property.amenities.includes(
-                "Wheelchair Accessible"
-              )}
-            />
-            <label htmlFor="amenity_wheelchair_accessible">
-              Wheelchair Accessible
-            </label>
+            <label htmlFor="amenity_kitchen">Kitchen Facilities</label>
           </div>
           <div>
             <input
@@ -246,9 +187,82 @@ const PropertyEditForm = ({ property }) => {
               name="amenities"
               value="Elevator Access"
               className="mr-2"
-              defaultChecked={property.amenities.includes("Elevator Access")}
             />
             <label htmlFor="amenity_elevator_access">Elevator Access</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_transport_links"
+              name="amenities"
+              value="Transport Links"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_transport_links">Transport Links</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_pool"
+              name="amenities"
+              value="Swimming Pool"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_pool"> Heated Swimming Pool</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_hot_tub"
+              name="amenities"
+              value="Hot Tub"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_hot_tub">Hot Tub</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_wider_door_frames"
+              name="amenities"
+              value="Wider Doorframes"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_wider_door_frames">Wider Door Frames</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_coloured_door_frames"
+              name="amenities"
+              value="Wider Doorframes"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_coloured_door_frames">
+              Coloured Door Frames
+            </label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_wheelchair_accessible"
+              name="amenities"
+              value="Wheelchair Accessible"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_wheelchair_accessible">
+              Wheelchair Accessible
+            </label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_even_floors"
+              name="amenities"
+              value="Elevator Access"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_even_floors">Even Floors</label>
           </div>
           <div>
             <input
@@ -257,44 +271,41 @@ const PropertyEditForm = ({ property }) => {
               name="amenities"
               value="Dishwasher"
               className="mr-2"
-              defaultChecked={property.amenities.includes("Dishwasher")}
             />
             <label htmlFor="amenity_dishwasher">Dishwasher</label>
           </div>
+
           <div>
             <input
               type="checkbox"
-              id="amenity_gym_fitness_center"
+              id="amenity_hoist_facilities"
               name="amenities"
-              value="Gym/Fitness Center"
+              value="Hoist Facilities"
               className="mr-2"
-              defaultChecked={property.amenities.includes("Gym/Fitness Center")}
             />
-            <label htmlFor="amenity_gym_fitness_center">
-              Gym/Fitness Center
+            <label htmlFor="amenity_hoist_facilities">Hoist Facilities</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="free_carers"
+              name="amenities"
+              value="Free carers"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_free_carers">Carers go free</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_changing_facilities"
+              name="amenities"
+              value="Changing facilities"
+              className="mr-2"
+            />
+            <label htmlFor="amenity_changing_facilities">
+              Changing facilities
             </label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="amenity_air_conditioning"
-              name="amenities"
-              value="Air Conditioning"
-              className="mr-2"
-              defaultChecked={property.amenities.includes("Air Conditioning")}
-            />
-            <label htmlFor="amenity_air_conditioning">Air Conditioning</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="amenity_balcony_patio"
-              name="amenities"
-              value="Balcony/Patio"
-              className="mr-2"
-              defaultChecked={property.amenities.includes("Balcony/Patio")}
-            />
-            <label htmlFor="amenity_balcony_patio">Balcony/Patio</label>
           </div>
           <div>
             <input
@@ -303,20 +314,22 @@ const PropertyEditForm = ({ property }) => {
               name="amenities"
               value="Smart TV"
               className="mr-2"
-              defaultChecked={property.amenities.includes("Smart TV")}
             />
-            <label htmlFor="amenity_smart_tv">Smart TV</label>
+            <label htmlFor="amenity_smart_tv">
+              No Over-stimulating screens
+            </label>
           </div>
           <div>
             <input
               type="checkbox"
-              id="amenity_coffee_maker"
+              id="amenity_autism_friendly_times"
               name="amenities"
-              value="Coffee Maker"
+              value="Autism friendly times"
               className="mr-2"
-              defaultChecked={property.amenities.includes("Coffee Maker")}
             />
-            <label htmlFor="amenity_coffee_maker">Coffee Maker</label>
+            <label htmlFor="amenity_autism_friendly_times">
+              Autism friendly times/SEN times
+            </label>
           </div>
         </div>
       </div>

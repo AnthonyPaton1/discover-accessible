@@ -19,8 +19,8 @@ const SearchResultsPage = async ({
       { description: locationPattern },
       { "location.street": locationPattern },
       { "location.city": locationPattern },
-      { "location.state": locationPattern },
-      { "location.zipcode": locationPattern },
+      { "location.county": locationPattern },
+      { "location.postcode": locationPattern },
     ],
   };
 
